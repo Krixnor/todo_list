@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="dashBoard.css">
+    <title>Dashboard</title>
+</head>
+<body>
+    <div class="container">
+    <h1>Welcome to Your Dashboard</h1>
+    <div id="dashboardData"></div>
+</div>
+
+    <script>
+        var dashboardData = document.getElementById('dashboardData');
+        var keys = Object.keys(localStorage);
+
+        var html = '<h2>User Information</h2>';
+        html += '<ul>';
+
+        for (var i = 0; i < keys.length; i++) {
+            if (keys[i]=='pass'){
+                continue
+            }
+            var key = keys[i];
+            var value = localStorage.getItem(key);
+
+            html += ' <div id="point"><li><span id="spec">' + key + ':</span> ' + '<span id="special">'+ value +'</span>' + '</li> <div>' ;
+        }
+
+        html += '</ul>';
+        dashboardData.innerHTML = html;
+    </script>
+</body>
+</html>

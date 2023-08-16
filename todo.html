@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="todo.css" />
+    <script
+      src="https://kit.fontawesome.com/93aac082d0.js"
+      crossorigin="anonymous"
+    ></script>
+    <title>Sign up Page</title>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Sign Up</h1>
+      <form action="">
+        <div class="signContain">
+          <div class="same">
+            <label for="name">FullName</label> <br />
+            <input type="name" id="name" required />
+          </div>
+          <div class="same">
+            <label for="email">Email</label> <br />
+            <input type="email" id="mail" required />
+          </div>
+          <div class="same">
+            <label for="password">Password</label> <br />
+            <input type="password" id="pass" required />
+          </div>
+        </div>
+        <div class="signUp">
+          <button type="submit" id="mit" onclick="sub()">Sign Up</button>
+        </div>
+      </form>
+    </div>
+
+    <script>
+      var inputName = document.querySelectorAll("input[type]");
+      for (var i = 0; i < inputName.length; i++) {
+        // Use a closure to capture the value of i for each iteration
+        (function (index) {
+          inputName[index].addEventListener("focus", (e) => {
+            e.srcElement.style.borderBottomColor = "#2FA528";
+          });
+          inputName[index].addEventListener("blur", (e) => {
+            e.srcElement.style.borderBottomColor = "teal"; // Remove the "1px solid" from the color value
+          });
+        })(i);
+      }
+
+      function sub() {
+        var x1 = document.querySelector("#mit");
+        var empty = false;
+        for (var i = 0; i < inputName.length; i++) {
+          if (inputName[i].value === "") {
+            empty = true;
+            inputName[i].style.borderBottomColor = "red";
+          }
+        }
+        if (empty) {
+          x1.style.backgroundColor = "teal"; // Keep the same background color
+        } else {
+          //localStorage
+          for (var i = 0; i < inputName.length; i++) {
+            localStorage.setItem(inputName[i].id, inputName[i].value);
+          }
+          alert("success");
+          x1.style.backgroundColor = "#eeee"; // Change background color to #eeee if no empty inputs
+          window.location.href = "dashBoard.html";
+        }
+      }
+    </script>
+  </body>
+</html>

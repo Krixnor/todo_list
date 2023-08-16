@@ -1,0 +1,37 @@
+body {
+    font-family: 'Poppins' sans-serif; background-color: #f7f7f7;
+  }
+  .container {
+    width: 800px; margin: 50px auto; background-color: #fff; padding: 20px; border-radius: 5px; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  h1 {
+    text-align: center; margin-bottom: 20px; font-family: 'Poppins' sans-serif; color:#2F5A78
+  }
+  #dashboardData { padding: 0;
+  }
+  
+  #dashboardData h2 {
+    margin-bottom: 10px;color: black;
+  }
+ #point {
+    font-family: sans-serif; margin-top: 20px;
+  }
+  #special{
+    color: teal; margin-left: 10px;
+  }
+  #spec{
+    font-weight: bold;
+  }
+  
+  #dashboardData ul {
+    list-style: none; padding: 0; margin: 0;
+  }
+  
+  #dashboardData li {
+    margin-bottom: 5px;
+  }
+  
+  #dashboardData li strong {
+    font-weight: bold;
+  }
+  
